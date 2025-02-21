@@ -1,0 +1,104 @@
+**🚀 2-Day Roadmap for Blockchain-Based Event Ticketing System (Move Language)**
+
+## **Tech Stack**
+
+- **Blockchain Layer:** Aptos or Sui (Move-based blockchains)
+- **Smart Contracts:** Move Language
+- **Frontend:** React or Vue with Web3 integration (Aptos SDK / Sui SDK)
+- **NFT Standard:** Aptos Token Standard or Sui NFTs
+- **Database (optional for UI):** Firebase / Supabase / IndexedDB
+- **Hosting:** Vercel / Netlify for frontend, Aptos testnet for contracts
+
+---
+
+## **🕒 Day 1: Smart Contract Development & Backend**
+
+### **1️⃣ Setup Environment (1-2 hours)**
+
+1. **Install Move CLI**
+   ```sh
+   cargo install --git https://github.com/move-language/move move-cli
+   ```
+2. **Install Aptos CLI** (if using Aptos)
+   ```sh
+   curl -fsSL https://aptos.dev/install.sh | bash
+   ```
+3. **Set up Aptos wallet**
+   ```sh
+   aptos account create
+   ```
+4. **Clone a Move project template**
+   ```sh
+   git clone https://github.com/aptos-labs/aptos-core.git
+   cd aptos-core
+   ```
+
+### **2️⃣ Develop Core Smart Contracts (4-5 hours)**
+
+#### **Ticket NFT Module (Move Code)**
+
+- **Define **``** struct** with:
+  - `id: u64` (Unique Ticket ID)
+  - `event_name: vector<u8>`
+  - `owner: address`
+  - `price: u64`
+
+#### **Functions to Implement**
+
+1. **Minting Function:**
+   - Allows the event organizer to create NFT-based tickets.
+2. **Transfer Function:**
+   - Allows secure ticket resale while enforcing **price limits**.
+3. **Royalty System:**
+   - Ensures that a percentage of each resale is sent to the event organizer.
+4. **Security Rules:**
+   - Only event organizers can mint tickets.
+   - Prevent unauthorized modifications.
+
+---
+
+## **🕒 Day 2: Frontend & Integration**
+
+### **3️⃣ Build the Frontend (4-5 hours)**
+
+1. **UI Implementation:**
+   - **Home Page:** List available events & tickets.
+   - **Buy Ticket Page:** Connect wallet, purchase NFT.
+   - **Resale Page:** Sell tickets with enforced price controls.
+2. **Integrate Move Smart Contracts using Aptos/Sui SDK**
+   - Fetch NFT metadata from blockchain.
+   - Execute ticket purchase & resale transactions.
+   - Display user’s ticket ownership.
+
+---
+
+### **4️⃣ Final Testing & Deployment (3-4 hours)**
+
+1. **End-to-End Testing:**
+   - Buying tickets, reselling, verifying royalties.
+   - Checking smart contract security.
+2. **Deploy Contracts on Aptos/Sui Testnet**
+   ```sh
+   aptos move publish --profile testnet
+   ```
+3. **Deploy Frontend on Vercel/Netlify**
+4. **Write README with setup instructions**
+
+---
+
+## **📌 Optional Enhancements (If Time Permits)**
+
+- **Bidding System:** Auction-based ticket resale.
+- **Anti-Bot Measures:** Purchase limits in smart contract.
+- **Dynamic Ticketing:** Update perks post-mint without reissuing.
+
+---
+
+## **✅ Final Deliverables:**
+
+1. **Move Smart Contracts (Aptos/Sui)**
+2. **React/Vue Frontend**
+3. **Testnet Deployment**
+4. **README Documentation**
+5. **GitHub Repository Submission**
+
